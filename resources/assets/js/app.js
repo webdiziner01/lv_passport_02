@@ -15,8 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+Vue.component('timeline', require('./components/Timeline.vue'));
+window.axios.defaults.baseURL = 'http://localhost/codes/lv/lv_passport_02/public/';
 const app = new Vue({
     el: '#app'
 });
