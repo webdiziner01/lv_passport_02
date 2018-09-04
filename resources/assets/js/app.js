@@ -16,7 +16,12 @@ window.Vue = require('vue');
  */
 
 Vue.component('timeline', require('./components/Timeline.vue'));
+Vue.component('post-tweet', require('./components/PostTweet.vue'));
+
+/*added custom variable for axios to work*/
 window.axios.defaults.baseURL = 'http://localhost/codes/lv/lv_passport_02/public/';
+
+
 const app = new Vue({
     el: '#app'
 });

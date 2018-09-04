@@ -11,4 +11,22 @@ class TweetController extends Controller
         return $request->user()->tweets()->with(['user'])->get();
 
     }
+
+
+    public function store(Request $request){
+        $this->validate($request, [
+           'body' => 'required'
+        ]);
+
+        $tweet = $request->user()->tweets()->create([
+            'body' => $request->body
+        ])->load('user');
+
+        return $tweet;
+
+
+    }
+
+
+
 }

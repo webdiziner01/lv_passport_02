@@ -7,9 +7,9 @@
 
                     <div class="card-body">
 
+                        <post-tweet :tweets="tweets"></post-tweet>
 
-
-
+                        <hr>
                         <ul class="list-unstyled">
                             <li class="media my-4" v-for="tweet in tweets">
                                 <a href="#"><img class="mr-3"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAIVBMVEXMzMyWlpbFxcWjo6O+vr63t7ecnJyqqqqbm5uxsbGampoKZyAaAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAU0lEQVRIiWNgGAWjYBQMd8Bk7KCITGMAZqeAQgZ2zwAwjQ2wmYU6ArVDaGyA0aWTkYHBFEpjM0FpoaABUzGExqaAJdmBkYFdNQBMj4JRMAoGOwAAPNIL2qWeApgAAAAASUVORK5CYII=" alt="" /></a>
@@ -32,13 +32,19 @@
 </template>
 
 <script>
+
+    import PostTweet from './PostTweet.vue'
+
+
     export default {
         data(){
           return {
               tweets: []
           }
         },
-
+        component:[
+            PostTweet
+        ],
         mounted() {
             //console.log('Component mounted.')
             // GET /someUrl
@@ -46,6 +52,8 @@
                 .get('/tweets')
                 .then((response) =>{
                     this.tweets = response.data
+
+
 
                 })
 
