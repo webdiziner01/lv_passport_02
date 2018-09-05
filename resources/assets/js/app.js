@@ -22,6 +22,27 @@ Vue.component('post-tweet', require('./components/PostTweet.vue'));
 window.axios.defaults.baseURL = 'http://localhost/codes/lv/lv_passport_02/public/';
 
 
+
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue')
+);
+
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue')
+);
+
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue')
+);
+
+
+
+
+
+
 const app = new Vue({
     el: '#app'
 });
