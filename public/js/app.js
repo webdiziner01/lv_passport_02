@@ -47483,7 +47483,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('/tweets', { body: this.body }).then(function (response) {
 
                 _this.tweets.unshift(response.data);
-
                 _this.body = null;
             });
         }

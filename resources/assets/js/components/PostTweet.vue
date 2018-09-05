@@ -27,12 +27,8 @@
                         .post('/tweets',{body:this.body})
                         .then((response) =>{
 
-
-
-                            this.tweets.unshift(response.data);
-
-
-                            this.body = null;
+                        this.tweets.unshift(response.data);
+                          this.body = null;
 
 
 
